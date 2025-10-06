@@ -1,0 +1,18 @@
+FROM oven/bun:1
+
+WORKDIR usr/src/app
+
+COPY ./packages ./package
+COPY ./bun.lock ./bun.lock
+COPY ./package.json ./package.json
+COPY ./turbo.json ./turbo.json
+COPY ./app/ws ./app/ws
+
+RUN bun install
+
+RUN bun db:generate
+
+
+EXPOSE 8080
+
+CMD ["bun","run","start:ws"]
