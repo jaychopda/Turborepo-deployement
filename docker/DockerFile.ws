@@ -6,7 +6,7 @@ COPY ./packages ./package
 COPY ./bun.lock ./bun.lock
 COPY ./package.json ./package.json
 COPY ./turbo.json ./turbo.json
-COPY ./app/ws ./app/ws
+COPY ./apps/ws ./apps/ws
 
 RUN bun install
 
