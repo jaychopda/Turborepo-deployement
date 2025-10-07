@@ -1,8 +1,8 @@
 FROM oven/bun:1
 
-WORKDIR usr/src/app
+WORKDIR /usr/src/app
 
-COPY ./packages ./package
+COPY ./packages ./packages
 COPY ./bun.lock ./bun.lock
 COPY ./package.json ./package.json
 COPY ./turbo.json ./turbo.json
