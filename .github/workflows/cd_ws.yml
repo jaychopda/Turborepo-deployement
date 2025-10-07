@@ -1,4 +1,4 @@
-name: Deploy the backend
+name: Deploy the ws
 
 on:
     push:
@@ -23,6 +23,6 @@ jobs:
               uses: docker/build-push-action@v4
               with:
                   context: .
-                  file: ./docker/DockerFile.Backend
+                  file: ./docker/Dockerfile.ws
                   push: true
-                  tags: jaychopda/todo-backend:${{ github.sha }}
+                  tags: jaychopda/todo-ws:${{ github.sha }}
