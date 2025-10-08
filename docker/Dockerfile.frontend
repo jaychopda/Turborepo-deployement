@@ -1,5 +1,8 @@
 FROM oven/bun:1
 
+# Install OpenSSL to fix Prisma warnings
+RUN apt-get update -y && apt-get install -y openssl
+
 WORKDIR /usr/src/app
 
 ARG DATABASE_URL
